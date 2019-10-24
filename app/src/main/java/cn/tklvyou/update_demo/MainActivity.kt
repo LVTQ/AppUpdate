@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
 import com.vector.update_app.UpdateAppManager
+import com.vector.update_app_kotlin.updateApp
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -14,6 +15,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnTest.setOnClickListener {
+            //kotlin 方式
+//            updateApp().update(true,"9.0.1","http://huaiyuan.dashuiniu.com.cn/uploads/apk/huaiyuan.apk","体验有惊喜",false)
+
+            //java 方式
             UpdateAppManager.Builder()
                 //必须设置，当前Activity
                 .setActivity(this)

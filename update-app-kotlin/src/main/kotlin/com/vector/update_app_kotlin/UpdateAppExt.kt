@@ -25,6 +25,16 @@ fun Activity.updateApp(
     }.build()
 }
 
+
+fun Activity.updateApp(init: (UpdateAppManager.Builder.() -> Unit)? = null): UpdateAppManager {
+    val act = this
+    return UpdateAppManager.Builder().apply {
+        activity = act
+        if (init != null) init()
+    }.build()
+}
+
+
 inline fun UpdateAppManager.check(init: Callback.() -> Unit) {
     checkNewApp(Callback().apply(init))
 }

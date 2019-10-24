@@ -579,13 +579,17 @@ public class UpdateAppManager {
          */
         public UpdateAppManager build() {
             //校验
-            if (getActivity() == null || TextUtils.isEmpty(getUpdateUrl())) {
+            if (getActivity() == null) {
                 throw new NullPointerException("必要参数不能为空");
             }
 
             //如果未自定义实现http接口，则使用默认设置
             if (getHttpManager() == null) {
                 setHttpManager(new DefaultHttpUtil());
+            }else {
+                if (TextUtils.isEmpty(getUpdateUrl())) {
+                    throw new NullPointerException("必要参数不能为空");
+                }
             }
 
             if (TextUtils.isEmpty(getTargetPath())) {
