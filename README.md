@@ -90,8 +90,8 @@ dependencies {
 
 ## 详细说明
 
-- [java方式](java.md)
-- [kotlin方式](kotlin.md)
+- [java方式](https://github.com/WVector/AppUpdate/blob/master/java.md)
+- [kotlin方式](https://github.com/WVector/AppUpdate/blob/master/kotlin.md)
 
 #### 进度条使用的是代码家的「[NumberProgressBar](https://github.com/daimajia/NumberProgressBar)」
 
