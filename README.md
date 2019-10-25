@@ -1,5 +1,5 @@
 
-## Android 版本更新(基于https://github.com/WVector/AppUpdate修改，内置HttpManager默认实现，简化使用流程)
+## Android 版本更新(基于https://github.com/WVector/AppUpdate 修改，内置HttpManager默认实现，简化使用流程)
 
 ## 目录
 
