@@ -46,7 +46,16 @@
 
 ## Gradle 依赖
 
-**java方式引用**
+**引用**
+
+```root build.gradle
+allprojects {
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
+	}
+}
+```
 
 ```gradle
 dependencies {
