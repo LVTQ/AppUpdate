@@ -1,5 +1,6 @@
 package com.vector.update_app;
 
+import android.text.Spanned;
 import android.text.TextUtils;
 
 import java.io.Serializable;
@@ -27,6 +28,7 @@ public class UpdateAppBean implements Serializable {
     private String apk_file_url;
     //更新日志
     private String update_log;
+    private Spanned spanned_update_log;
     //配置默认更新dialog 的title
     private String update_def_dialog_title;
     //新app大小
@@ -121,6 +123,15 @@ public class UpdateAppBean implements Serializable {
 
     public UpdateAppBean setUpdateLog(String update_log) {
         this.update_log = update_log;
+        return this;
+    }
+
+    public Spanned getSpannedUpdateLog() {
+        return spanned_update_log;
+    }
+
+    public UpdateAppBean setSpannedUpdateLog(Spanned spanned_update_log) {
+        this.spanned_update_log = spanned_update_log;
         return this;
     }
 

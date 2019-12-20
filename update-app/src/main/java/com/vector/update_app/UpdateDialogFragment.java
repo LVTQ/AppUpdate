@@ -15,6 +15,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentManager;
+import android.text.Spanned;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
@@ -192,6 +193,7 @@ public class UpdateDialogFragment extends DialogFragment implements View.OnClick
             final String newVersion = mUpdateApp.getNewVersion();
             final String targetSize = mUpdateApp.getTargetSize();
             final String updateLog = mUpdateApp.getUpdateLog();
+            final Spanned spannedUpdateLog = mUpdateApp.getSpannedUpdateLog();
 
             String msg = "";
 
@@ -204,7 +206,12 @@ public class UpdateDialogFragment extends DialogFragment implements View.OnClick
             }
 
             //更新内容
-            mContentTextView.setText(msg);
+            if (!TextUtils.isEmpty(msg)) {
+                mContentTextView.setText(msg);
+            }else {
+                mContentTextView.setText(spannedUpdateLog);
+            }
+
             //标题
             mTitleTextView.setText(TextUtils.isEmpty(dialogTitle) ? String.format("是否升级到%s版本？", newVersion) : dialogTitle);
             //强制更新

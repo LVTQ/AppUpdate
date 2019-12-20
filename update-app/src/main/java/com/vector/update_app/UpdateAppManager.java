@@ -11,6 +11,7 @@ import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
+import android.text.Spanned;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
@@ -246,6 +247,31 @@ public class UpdateAppManager {
 
     }
 
+
+    public void update(boolean update, String new_version_name, String apkUrl, Spanned details, boolean isForce) {
+        mUpdateApp = new UpdateAppBean();
+        //（必须）是否更新Yes,No
+        mUpdateApp.setUpdate(update ? "Yes" : "No")
+                //（必须）新版本号，
+                .setNewVersion(new_version_name)
+                //（必须）下载地址
+                .setApkFileUrl(apkUrl)
+                //（必须）更新内容
+                .setSpannedUpdateLog(details)
+                //是否强制更新
+                .setConstraint(isForce);
+
+        if (mUpdateApp.isUpdate()) {
+            showDialogFragment();
+            //假如是静默下载，可能需要判断，
+            //是否wifi,
+            //是否已经下载，如果已经下载直接提示安装
+            //没有则进行下载，监听下载完成，弹出安装对话框
+        } else {
+            Log.d(TAG, "没有新版本");
+        }
+
+    }
 
 
     /**
