@@ -182,7 +182,8 @@ public class UpdateAppManager {
             Bundle bundle = new Bundle();
             //添加信息，
             fillUpdateAppData();
-            bundle.putSerializable(INTENT_KEY, mUpdateApp);
+//            bundle.putSerializable(INTENT_KEY, mUpdateApp);
+            bundle.putParcelable(INTENT_KEY,mUpdateApp);
             if (mThemeColor != 0) {
                 bundle.putInt(THEME_KEY, mThemeColor);
             }
