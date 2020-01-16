@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.vector.update_app.listener.ExceptionHandler;
 import com.vector.update_app.listener.ExceptionHandlerHelper;
 import com.vector.update_app.listener.IUpdateDialogFragmentListener;
+import com.vector.update_app.model.Contacts;
 import com.vector.update_app.model.UpdateAppBean;
 import com.vector.update_app.service.DownloadService;
 import com.vector.update_app.utils.AppUpdateUtils;
@@ -179,11 +180,14 @@ public class UpdateAppManager {
         //校验
         if (verify()) return;
         if (mActivity != null && !mActivity.isFinishing()) {
+
+
             Bundle bundle = new Bundle();
             //添加信息，
             fillUpdateAppData();
+            Contacts.mUpdateApp = mUpdateApp;
 //            bundle.putSerializable(INTENT_KEY, mUpdateApp);
-            bundle.putParcelable(INTENT_KEY,mUpdateApp);
+//            bundle.putParcelable(INTENT_KEY,mUpdateApp);
             if (mThemeColor != 0) {
                 bundle.putInt(THEME_KEY, mThemeColor);
             }

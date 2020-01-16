@@ -34,6 +34,7 @@ import android.widget.Toast;
 import com.vector.update_app.listener.ExceptionHandler;
 import com.vector.update_app.listener.ExceptionHandlerHelper;
 import com.vector.update_app.listener.IUpdateDialogFragmentListener;
+import com.vector.update_app.model.Contacts;
 import com.vector.update_app.model.UpdateAppBean;
 import com.vector.update_app.service.DownloadService;
 import com.vector.update_app.utils.AppUpdateUtils;
@@ -104,7 +105,6 @@ public class UpdateDialogFragment extends DialogFragment implements View.OnClick
 
 
         mActivity = getActivity();
-
 
 
     }
@@ -183,7 +183,8 @@ public class UpdateDialogFragment extends DialogFragment implements View.OnClick
     }
 
     private void initData() {
-        mUpdateApp = (UpdateAppBean) getArguments().getSerializable(UpdateAppManager.INTENT_KEY);
+//        mUpdateApp = (UpdateAppBean) getArguments().getSerializable(UpdateAppManager.INTENT_KEY);
+        mUpdateApp = Contacts.mUpdateApp;
         //设置主题色
         initTheme();
 
@@ -209,7 +210,7 @@ public class UpdateDialogFragment extends DialogFragment implements View.OnClick
             //更新内容
             if (!TextUtils.isEmpty(msg)) {
                 mContentTextView.setText(msg);
-            }else {
+            } else {
                 mContentTextView.setText(spannedUpdateLog);
             }
 

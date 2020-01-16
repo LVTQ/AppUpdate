@@ -1,7 +1,5 @@
 package com.vector.update_app.model;
 
-import android.os.Parcel;
-import android.os.Parcelable;
 import android.text.Spanned;
 import android.text.TextUtils;
 
@@ -12,7 +10,9 @@ import java.io.Serializable;
 /**
  * 版本信息
  */
-public class UpdateAppBean implements Parcelable {
+public class UpdateAppBean implements Serializable {
+
+    private static final long serialVersionUID = 14547541511L;
 
     /**
      * update : Yes
@@ -206,64 +206,4 @@ public class UpdateAppBean implements Parcelable {
         return this;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(this.update);
-        dest.writeString(this.new_version);
-        dest.writeString(this.apk_file_url);
-        dest.writeString(this.update_log);
-        dest.writeParcelable((Parcelable) this.spanned_update_log, flags);
-        dest.writeString(this.update_def_dialog_title);
-        dest.writeString(this.target_size);
-        dest.writeByte(this.constraint ? (byte) 1 : (byte) 0);
-        dest.writeString(this.new_md5);
-        dest.writeByte(this.delta ? (byte) 1 : (byte) 0);
-        dest.writeString(this.origin_res);
-        dest.writeParcelable((Parcelable) this.httpManager, flags);
-        dest.writeString(this.targetPath);
-        dest.writeByte(this.mHideDialog ? (byte) 1 : (byte) 0);
-        dest.writeByte(this.mShowIgnoreVersion ? (byte) 1 : (byte) 0);
-        dest.writeByte(this.mDismissNotificationProgress ? (byte) 1 : (byte) 0);
-        dest.writeByte(this.mOnlyWifi ? (byte) 1 : (byte) 0);
-    }
-
-    public UpdateAppBean() {
-    }
-
-    protected UpdateAppBean(Parcel in) {
-        this.update = in.readString();
-        this.new_version = in.readString();
-        this.apk_file_url = in.readString();
-        this.update_log = in.readString();
-        this.spanned_update_log = in.readParcelable(Spanned.class.getClassLoader());
-        this.update_def_dialog_title = in.readString();
-        this.target_size = in.readString();
-        this.constraint = in.readByte() != 0;
-        this.new_md5 = in.readString();
-        this.delta = in.readByte() != 0;
-        this.origin_res = in.readString();
-        this.httpManager = in.readParcelable(HttpManager.class.getClassLoader());
-        this.targetPath = in.readString();
-        this.mHideDialog = in.readByte() != 0;
-        this.mShowIgnoreVersion = in.readByte() != 0;
-        this.mDismissNotificationProgress = in.readByte() != 0;
-        this.mOnlyWifi = in.readByte() != 0;
-    }
-
-    public static final Parcelable.Creator<UpdateAppBean> CREATOR = new Parcelable.Creator<UpdateAppBean>() {
-        @Override
-        public UpdateAppBean createFromParcel(Parcel source) {
-            return new UpdateAppBean(source);
-        }
-
-        @Override
-        public UpdateAppBean[] newArray(int size) {
-            return new UpdateAppBean[size];
-        }
-    };
 }
