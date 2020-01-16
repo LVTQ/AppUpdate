@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import com.vector.update_app.HttpManager;
 import com.vector.update_app.R;
-import com.vector.update_app.UpdateAppBean;
+import com.vector.update_app.model.UpdateAppBean;
 import com.vector.update_app.utils.AppUpdateUtils;
 
 import java.io.File;

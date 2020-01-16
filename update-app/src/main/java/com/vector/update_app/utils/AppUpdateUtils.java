@@ -22,7 +22,7 @@ import android.support.v4.content.FileProvider;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 
-import com.vector.update_app.UpdateAppBean;
+import com.vector.update_app.model.UpdateAppBean;
 import com.vector.update_app.listener.ExceptionHandler;
 import com.vector.update_app.listener.ExceptionHandlerHelper;
 

@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.vector.update_app.listener.ExceptionHandler;
 import com.vector.update_app.listener.ExceptionHandlerHelper;
 import com.vector.update_app.listener.IUpdateDialogFragmentListener;
+import com.vector.update_app.model.UpdateAppBean;
 import com.vector.update_app.service.DownloadService;
 import com.vector.update_app.utils.AppUpdateUtils;
 

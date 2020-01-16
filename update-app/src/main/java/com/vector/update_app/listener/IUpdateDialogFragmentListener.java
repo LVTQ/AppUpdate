@@ -1,6 +1,6 @@
 package com.vector.update_app.listener;
 
-import com.vector.update_app.UpdateAppBean;
+import com.vector.update_app.model.UpdateAppBean;
 
 /**
  * version 1.0

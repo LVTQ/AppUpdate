@@ -2,7 +2,7 @@ package com.vector.update_app_kotlin
 
 import android.app.Activity
 import com.vector.update_app.HttpManager
-import com.vector.update_app.UpdateAppBean
+import com.vector.update_app.model.UpdateAppBean
 import com.vector.update_app.UpdateAppManager
 import com.vector.update_app.UpdateCallback
 import com.vector.update_app.service.DownloadService

@@ -1,5 +1,6 @@
 package com.vector.update_app;
 
+import com.vector.update_app.model.UpdateAppBean;
 import com.vector.update_app.service.DownloadService;
 import com.vector.update_app.utils.AppUpdateUtils;
 

@@ -1,5 +1,7 @@
 package com.vector.update_app;
 
+import com.vector.update_app.model.UpdateAppBean;
+
 import org.json.JSONObject;
 
 /**

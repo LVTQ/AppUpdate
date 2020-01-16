@@ -23,3 +23,6 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+#---------------------------------1.实体类---------------------------------
+-keep class com.vector.update_app.model.** { *; }
